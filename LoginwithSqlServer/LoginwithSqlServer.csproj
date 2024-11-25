@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD3EBD7B-9242-48B5-8FCC-D352A2579D7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LoginwithSqlServer</RootNamespace>
+    <AssemblyName>LoginwithSqlServer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="models\DataConnection.cs" />
+    <Compile Include="LoginAuthentication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAuthentication.Designer.cs">
+      <DependentUpon>LoginAuthentication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\FrmMenuOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\FrmMenuOptions.Designer.cs">
+      <DependentUpon>FrmMenuOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\FormCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\FormCheckOut.Designer.cs">
+      <DependentUpon>FormCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\FormCreateNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\FormCreateNew.Designer.cs">
+      <DependentUpon>FormCreateNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\FrmOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\FrmOrderDetail.Designer.cs">
+      <DependentUpon>FrmOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\FrmLottery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\FrmLottery.Designer.cs">
+      <DependentUpon>FrmLottery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\People.cs" />
+    <Compile Include="user-control\ProductControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user-control\ProductControl.Designer.cs">
+      <DependentUpon>ProductControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\ProductOrder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pages\FrmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\FrmRegistration.Designer.cs">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\FrmShopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\FrmShopping.Designer.cs">
+      <DependentUpon>FrmShopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ViewPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\ViewPeople.Designer.cs">
+      <DependentUpon>ViewPeople.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoginAuthentication.resx">
+      <DependentUpon>LoginAuthentication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\FrmMenuOptions.resx">
+      <DependentUpon>FrmMenuOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\FormCheckOut.resx">
+      <DependentUpon>FormCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\FormCreateNew.resx">
+      <DependentUpon>FormCreateNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\FrmOrderDetail.resx">
+      <DependentUpon>FrmOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\FrmLottery.resx">
+      <DependentUpon>FrmLottery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user-control\ProductControl.resx">
+      <DependentUpon>ProductControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="pages\FrmRegistration.resx">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\FrmShopping.resx">
+      <DependentUpon>FrmShopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\ViewPeople.resx">
+      <DependentUpon>ViewPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noimage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-remove-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-40 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Ios7-Editing-Color-Dropper.16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Ios7-Very-Basic-Icons8-Cup.16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-6-16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
